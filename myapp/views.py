@@ -12,7 +12,7 @@ class IndexView(TemplateView):
     def get(self, request, *args, **kwargs):
        result = []
        if not result:
-           print('error')
+          pass
        context = {}
        return render(request, self.template_name, context=context)
 

@@ -1,5 +1,4 @@
 @import url('https://fonts.google.com/specimen/Mukta');
-@import url('https://fonts.google.com/specimen/Caveat');
 
 body {
     font-family: Mukta;
@@ -48,7 +47,6 @@ nav img:hover {
     margin: 0px;
 }
 
-
 #card-footer {
     background-color: #c1a9a8;
     color: white;
@@ -76,11 +74,9 @@ footer {
     padding: 15px;
 }
 
-
 .table {
     margin: 20px;
     padding: 15px;
-
 }
 
 .navbar {
@@ -105,7 +101,7 @@ body {
     position: relative;
     border-radius: 50%; 
     transition: 0.3s;
-    margin: 6px;
+    margin: 15px;
 }
 
 .redesimg:hover {
@@ -113,4 +109,32 @@ body {
     margin-right: 10px;
     transform: scale(1.1 , 1.1);
     box-shadow: 2px 3px 3px rgba(0,0,0,0.8);
+}
+
+
+.carousel-caption {
+    transform: translateY(50px);
+
+  }
+
+.noticias {
+padding: 30px;
+
+}
+
+.noticia {
+padding: 30px;
+margin: 10px;
+border-color: #ABDEBA;
+
+}
+
+#titular {
+    text-align: center;
+    color:#907491;
+    font-size: x-large;
+}
+
+#cuerpo {
+    text-align: justify;
 }
