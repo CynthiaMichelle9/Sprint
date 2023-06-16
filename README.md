@@ -1,4 +1,4 @@
-# sprint Individual Módulo 6 
+# Sprint Individual Módulo 6 
 ## Cynthia Abarca
 
 - Creación del proyecto
@@ -10,6 +10,6 @@
 
 ### Usuario admin:
 
-- username: admin		
+- Username: admin		
 
-- contraseña: admin123
+- Contraseña: admin123
