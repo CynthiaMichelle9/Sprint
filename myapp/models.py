@@ -14,3 +14,13 @@ class Usuario(models.Model):
     
     def __str__(self):
          return f"{self.id}, {self.username}"
+    
+
+class FormularioContacto(models.Model):
+  nombre = models.CharField(max_length=60, null=False, blank=False)
+  email = models.EmailField(max_length=100, null=False, blank=False)
+  mensaje = models.CharField(max_length=1000, null=False, blank=False)
+
+  def __str__(self):
+    return self.nombre
+  

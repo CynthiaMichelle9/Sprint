@@ -4,6 +4,41 @@
 {% block title %} Usuarios {% endblock %}
 
 {% block contenido %}
-<h1 class="titulo">Usuarios registrados</h1>
-{% include "tables/usertable.html" %}
+<div class="d-flex justify-content-center">
+<div class="card" style="width: 800px;">
+    <div class="card-body">
+      <h5 class="card-title">Usuarios registrados</h5>
+      <div class="table-responsive">
+
+        <table class="table tabla">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre de usuario</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Email</th> 
+                    <th scope="col">Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <th scope="row">{{ usuario.id }}</th>
+                    <td>{{ usuario.username }}</td>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.apellido }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.telefono }}</td>
+        
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div>
+      <a href="{% url 'Registro' %}" class="btn btn-personal">Súmate!</a>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

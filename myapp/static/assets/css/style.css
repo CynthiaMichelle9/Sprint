@@ -1,24 +1,69 @@
-.btn-personal {
-    background-color: rgb(173, 180, 209);
-    color: white
+@import url('https://fonts.google.com/specimen/Mukta');
+@import url('https://fonts.google.com/specimen/Caveat');
+
+body {
+    font-family: Mukta;
 }
 
-ul,
-li {
-    display: inline-block;
-}
-
-footer {
-    font-size: medium;
-    font-weight: bold;
-    background-color: rgb(174, 176, 190);
-}
-
-h1 {
+.h1 {
     font-size: 30px;
     margin: 20px;
     padding: 15px;
+    font-family: Caveat; 
 
+}
+.btn-personal {
+    background-color:#baa5c8;
+    color: white;
+    border-radius: 10%;
+}
+.btn-personal:hover {
+    background-color: #d2c2dc;;
+    margin: 5px;
+    margin-right: 10px;
+    transform: scale(1.1 , 1.1);
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.8);
+}
+
+nav img {
+    border-radius: 30px;    
+    margin: 5px;
+    margin-right: 10px;
+    background-color: transparent;
+    transition: 0.3s
+}
+
+nav img:hover {
+    margin: 5px;
+    margin-right: 10px;
+    transform: scale(1.1 , 1.1);
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.8);
+}
+
+.ul-footer, .li-footer {
+    margin: 20px;
+}
+
+.futer {
+    margin: 0px;
+}
+
+
+#card-footer {
+    background-color: #c1a9a8;
+    color: white;
+    border-color: #c1a9a8;
+    align-items: center;
+    padding: 30px;
+    font-weight: bold;
+    text-align: justify;
+}
+
+footer {
+    background-color: #c1a9a8;
+    position: relative;
+    margin-bottom: 0px;
+    margin-top: auto
 }
 
 .novedades {
@@ -39,11 +84,11 @@ h1 {
 }
 
 .navbar {
-    background-color: #d7d2e2;
+    background-color: #E6D3E8
 }
 
 body {
-    background-color: rgb(255, 243, 255);
+    background-color:#e3ede3
 }
 
 .registrate {
@@ -51,3 +96,21 @@ body {
     font-weight: bold;
 }
 
+.card, .tabla {
+    background-color:#DEE8E0;
+    outline: #DEE8E0;
+}
+
+.redesimg {
+    position: relative;
+    border-radius: 50%; 
+    transition: 0.3s;
+    margin: 6px;
+}
+
+.redesimg:hover {
+    margin: 5px;
+    margin-right: 10px;
+    transform: scale(1.1 , 1.1);
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.8);
+}

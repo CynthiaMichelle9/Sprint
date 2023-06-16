@@ -2,13 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from .models import Usuario
-from myapp.forms import FormularioRegistro, LoginForm
-from django.utils.decorators import method_decorator
-
-
+from .models import Usuario, FormularioContacto
+from myapp.forms import FormularioRegistro, LoginForm, ContactoForm
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -64,6 +59,38 @@ class RegistroView(TemplateView):
             mensaje =  {"enviado": True, "resultado": form.errors}
 
         return render(request, self.template_name, {"formulario": form, "mensaje": mensaje })
+    
+
+class ContactoView(TemplateView):
+    template_name = 'contacto.html'
+
+    def get(self, request, *args, **kwargs):
+      context = self.get_context_data(**kwargs)
+      context["formulario"] = ContactoForm()
+      return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+      form = ContactoForm(request.POST)
+      mensajes = {
+        "enviado": False,
+        "resultado": None
+      }
+      if form.is_valid():
+        nombre = form.cleaned_data['nombre']
+        email = form.cleaned_data['email']
+        mensaje = form.cleaned_data['mensaje']
+
+        registro = FormularioContacto(
+          nombre=nombre,
+          email=email,
+          mensaje=mensaje
+        )
+        registro.save()
+
+        mensajes = { "enviado": True, "resultado": "Mensaje enviado correctamente" }
+      else:
+        mensajes = { "enviado": False, "resultado": form.errors }
+      return render(request, self.template_name, { "formulario": form, "mensajes": mensajes})
 
 class SesionView(TemplateView):
     template_name = 'registration/login.html'
@@ -81,21 +108,8 @@ class SesionView(TemplateView):
         if user is not None:
           if user.is_active:
             login(request, user)
-            return redirect('Micuenta')
+            return redirect('Home')
         form.add_error('username', 'El nombre de usuario o la contraseña son incorrectos. Por favor, inténtalo nuevamente.')
         return render(request, self.template_name, { "form": form })
       else:
         return render(request, self.template_name, { "form": form })
-
-@method_decorator(login_required, name='dispatch')
-class MicuentaView(TemplateView):
-    template_name = 'micuenta.html'
-    @login_required
-    def bienvenida(request):
-        username = request.user.username
-        return render(request, 'micuenta.html', {'username': username})
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['username'] = self.request.user.get_username()
-        return context

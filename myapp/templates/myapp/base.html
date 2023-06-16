@@ -45,7 +45,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="{% url 'Contacto' %}">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'Registro' %}">Regístrate</a>
@@ -76,7 +76,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'Logout' %}">Cerrar sesión</a>
                         </li>
-                        
+
                         {% endif %}
                     </ul>
                     <form class="d-flex" role="search">
@@ -95,33 +95,74 @@
     </div>
     {% block contenido%}
 
-    {% endblock %}
+    {% endblock contenido %}
 
     <br>
     <br>
-    <footer class="bd-footer py-4 py-md-5 mt-20">
-        <div class="container text-body-secondary text-center">
-            <p>Síguenos en nuestras redes sociales</p>
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
-                href="https://www.instagram.com/"><img src="{% static 'assets/images/redes/instagram.png'%}"
-                    alt=" instagram" width="50px" height="auto">
-            </a>
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
-                href="https://www.facebook.com/"><img src="{% static 'assets/images/redes/facebook.png'%}"
-                    alt=" facebook" width="50px" height="auto">
-            </a>
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
-                href="https://www.tiktok.com/"><img src="{% static 'assets/images/redes/tiktok.png'%}" alt=" tiktok"
-                    width="50px" height="auto">
-            </a>
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
-                href="https://www.twitter.com/">
-                <img src="{% static 'assets/images/redes/twitter.png'%}" alt="twitter" width="50px" height="auto">
-            </a>
-            <p>Copyright &copy; Aurora Handmade knits</p>
-        </div>
+
+    {% block footer %}
+
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 text-white-50 footerbase">
+        <div class="row row-cols-1 row-cols-md-3 g-4 futer">
+            <div class="col futer">
+                <div id="card-footer" class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title titulo-footer">Aurora Knits</h5>
+                        <p class="card-text">En Aurora Knits, nos apasiona ofrecer tejidos a mano de alta calidad y patrones creativos para tejido a palillo y crochet. Nuestro equipo de artesanos expertos se dedica a crear prendas únicas y elegantes, mientras que nuestros patrones inspiradores brindan la oportunidad de explorar la creatividad. ¡Te invitamos a sumergirte en el maravilloso mundo de los tejidos con nosotros!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col futer">
+                <div id="card-footer" class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Contacto</h5>
+                        <ul class="ul-footer">
+                            <li class="li-footer">Avenida tejedores #9090, Villa Alemana, Chile</li>
+                            <li class="li-footer">+56 9 99116644</li>
+                            <li class="li-footer">auroraknits@gmail.com</li>
+                           </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col futer">
+                <div id="card-footer" class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Nuestras redes sociales</h5>
+                        <div>
+                            <div class="redes">
+                                <a class="d-inline-flex r mb-2" href="https://www.instagram.com/"> <img
+                                        class="redesimg mb-4" src="{% static 'assets/images/redes/instagram.png'%}"
+                                        alt=" instagram" width="50px" height="auto">
+                                </a>
+                                <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+                                    href="https://www.facebook.com/"><img  class="redesimg mb-4" 
+                                        src="{% static 'assets/images/redes/facebook.png'%}" alt=" facebook"
+                                        width="50px" height="auto">
+                                </a>
+                                <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+                                    href="https://www.tiktok.com/"><img  class="redesimg mb-4" 
+                                        src="{% static 'assets/images/redes/tiktok.png'%}" alt=" tiktok" width="50px"
+                                        height="auto">
+                                </a>
+                                <a class="d-inline-flex  mb-2" href="https://www.twitter.com/">
+                                    <img class="redesimg mb-4" src="{% static 'assets/images/redes/twitter.png'%}"
+                                        alt="twitter" width="50px" height="auto">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container text-body-secondary text-center">
+                <img src="{% static 'assets/images/logotransparente.png' %}" alt="logotransparente" class="logoprincipal">
+
+                <p>Copyright Cynthia Michelle Abarca &copy; Aurora Handmade knits</p>
+            </div>
+
     </footer>
 
+    {% endblock footer %}
 </body>
 
 </html>
