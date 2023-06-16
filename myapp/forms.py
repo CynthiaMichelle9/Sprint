@@ -103,7 +103,7 @@ class ContactoForm(forms.Form):
                               'min_length': 'El mensaje debe tener al menos 20 caracteres'
                             },
                             widget=forms.Textarea(attrs={
-                              'placeholder': 'Ingrese aquí su mensaje, nos contactaremos con usted por correo electrónico',
+                              'placeholder': 'Ingrese aquí su mensaje, nos contactaremos con usted por correo electrónico.',
                               'class': 'form-control'
                             })
                             )
