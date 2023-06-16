@@ -1,6 +1,7 @@
 # Sprint Individual Módulo 6 
 ## Cynthia Abarca
 
+### Nuevos cambios
 - Creación del proyecto
 - Creación de la aplicación
 - Nuevo formulario de contacto 
@@ -10,6 +11,6 @@
 
 ### Usuario admin:
 
+Para crear su propio usuario utilice el administrador de django con las siguientes credenciales:
 - Username: admin		
-
 - Contraseña: admin123
